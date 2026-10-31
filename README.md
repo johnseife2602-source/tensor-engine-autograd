@@ -206,7 +206,7 @@ tensor-engine-autograd/
 
 1. **Strided Memory Layout:** Storing multidimensional data in flat contiguous buffers eliminates pointer dereferencing and allows arbitrary reshaping and transposing by recalculating strides rather than duplicating memory.
 2. **The Mathematics of Unbroadcasting:** When a tensor of shape `(1, N)` broadcasts forward to `(B, N)`, it reuses values $B$ times. By the multivariable chain rule, backpropagation requires summing incoming gradients along the broadcasted axis to preserve mathematical gradient conservation.
-3. **Weight Initialization Dynamics:** Unscaled random weights (`[-1, 1]`) cause activation variance to explode exponentially with depth ($\Variance(y) ~ Nin * Variance(x)$). Implementing Xavier/Glorot uniform initialization ($\sqrt{6 / (in + out)}$) guarantees stable variance across forward and backward passes.
+3. **Weight Initialization Dynamics:** Unscaled random weights (`[-1, 1]`) cause activation variance to explode exponentially with depth (Variance(y) ~ Nin * Variance(x)). Implementing Xavier/Glorot uniform initialization ($\sqrt{6 / (in + out)}$) guarantees stable variance across forward and backward passes.
 4. **Generator-Based Parameter Traversal:** Implementing `parameters()` as a recursive generator with `yield from` provides lazy, memory-efficient parameter discovery across nested submodules without manually maintaining parameter registries.
 
 ---
