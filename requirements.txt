@@ -1,0 +1,7 @@
+# ==============================================================================
+# TensorEngine Dependencies
+# ==============================================================================
+# The core library has ZERO external dependencies (pure Python standard library).
+#
+# Optional development and test dependencies:
+pytest>=8.0.0

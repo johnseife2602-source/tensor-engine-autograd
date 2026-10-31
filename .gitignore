@@ -1,0 +1,15 @@
+# Virtual Environment
+venv/
+.venv/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+
+# Testing Cache
+.pytest_cache/
+
+# Editor & OS Artifacts
+.vscode/
+.idea/
+*.swp
